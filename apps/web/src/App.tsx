@@ -7,6 +7,7 @@ import { SettingsView } from './components/SettingsView';
 import { AttendanceLogViewer } from './components/AttendanceLogViewer';
 import { CamerasView } from './components/CamerasView';
 import { AIChatView } from './components/AIChatView';
+import { AICopilot } from './components/AICopilot';
 import { AreaMapView } from './components/AreaMapView';
 import { DigitalTwinBuilder } from './components/DigitalTwinBuilder';
 import { ProfileModal } from './components/ProfileModal';
@@ -30,7 +31,7 @@ import {
   KeyRound, Mail, ArrowRight, Bot, Map as MapIcon, Moon, Sun,
   Activity, Terminal, ShieldAlert, Layers, Eye, Network, Fingerprint, TrendingUp,
   Monitor, Cpu, Zap, AlertTriangle, Archive, BarChart2, UserCheck, Globe,
-  HeartPulse, LayoutGrid, FolderSearch
+  HeartPulse, LayoutGrid, FolderSearch, Sparkles
 } from 'lucide-react';
 import { LanguageProvider, useLanguage } from './services/i18n';
 import { ThemeProvider, useTheme } from './theme/ThemeProvider';
@@ -176,7 +177,7 @@ const AppContent: React.FC = () => {
   
   const [currentView, setCurrentView] = useState<
     'dashboard' | 'users' | 'logs' | 'live_feed' | 'settings' | 'cameras' |
-    'ai_chat' | 'map' | 'builder' |
+    'ai_chat' | 'ai_copilot' | 'map' | 'builder' |
     'identity_fusion' | 'appearance_intel' | 'multi_modal_intel' |
     'event_timeline' | 'investigation' | 'resources' |
     'multi_site' | 'reports'
@@ -351,6 +352,7 @@ const AppContent: React.FC = () => {
           <div>
             <p className="px-4 text-[10px] font-bold text-text-secondary uppercase tracking-widest mb-3">Intellekt</p>
             <SidebarItem icon={FolderSearch} label="Tekshiruv Markazi"      active={currentView === 'investigation'}     onClick={() => { setCurrentView('investigation');     setIsSidebarOpen(false); }} />
+            <SidebarItem icon={Sparkles}     label="AI Copilot"              active={currentView === 'ai_copilot'}        onClick={() => { setCurrentView('ai_copilot');        setIsSidebarOpen(false); }} />
             <SidebarItem icon={Bot}          label={t('nav.aiChat')}         active={currentView === 'ai_chat'}           onClick={() => { setCurrentView('ai_chat');           setIsSidebarOpen(false); }} />
             <SidebarItem icon={Layers}       label="Identity Fusion"         active={currentView === 'identity_fusion'}   onClick={() => { setCurrentView('identity_fusion');   setIsSidebarOpen(false); }} />
             <SidebarItem icon={Eye}          label="Appearance Intelligence" active={currentView === 'appearance_intel'}  onClick={() => { setCurrentView('appearance_intel');  setIsSidebarOpen(false); }} />
@@ -521,6 +523,7 @@ const AppContent: React.FC = () => {
                       {currentView === 'map'               && <AreaMapView />}
                       {currentView === 'builder'           && <DigitalTwinBuilder />}
                       {currentView === 'settings'          && <SettingsView />}
+                      {currentView === 'ai_copilot'        && <AICopilot currentView={currentView} onNavigate={(v) => setCurrentView(v as any)} />}
                       {currentView === 'ai_chat'           && <AIChatView />}
                       {currentView === 'identity_fusion'   && <IdentityFusionConsole />}
                       {currentView === 'appearance_intel'  && <AppearanceIntelligenceConsole />}

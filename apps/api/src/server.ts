@@ -46,6 +46,7 @@ import { incidentService } from "./services/incidentService";
 // Person Intelligence Platform
 import { personIntelApiRouter } from "./services/personIntel/PersonIntelApiRouter";
 import { initPersonIntelPlatform } from "./services/personIntel/PersonIntelBootstrap";
+import { copilotApiRouter } from "./services/copilot/CopilotApiRouter";
 
 // OpenTelemetry — must be imported before app code starts
 import { setupTracing } from "./services/infrastructure/tracing";
@@ -2636,6 +2637,7 @@ Reply with ONLY valid JSON, no explanation.`;
 
   // ── Person Intelligence Platform API ──────────────────────────────────────
   app.use("/api/persons", authenticateToken, personIntelApiRouter);
+  app.use("/api/copilot", authenticateToken, copilotApiRouter);
 
   // ════════════════════════════════════════════════════════════════════════════
   // ENTERPRISE SOC ROUTES

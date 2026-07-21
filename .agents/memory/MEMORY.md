@@ -7,3 +7,4 @@
 - [VMS Person Intelligence Platform](vms-person-intel-platform.md) — 5-phase build: bootstrap wiring, API audit fixes, 3 new UI components, platform rebuild, SOC integration. PersonProfile field names, API shapes, VmsEventCallback pattern.
 - [VMS SOC Unified Command Center](vms-soc-unified-command.md) — SOCCommandCenter rebuilt as 17-module shell; SOCEventTimeline + SOCOverview created; icon typing rule; NotificationCenter wrapper pattern.
 - [VMS DevSecOps Platform](vms-devsecops-platform.md) — OTEL v2 API, Helm templates gap, fake code removal patterns, lerp animation, docker-compose exporter additions.
+- [VMS AI Copilot](vms-ai-copilot.md) — Enterprise AI Copilot built: CopilotOrchestrator, CopilotApiRouter (/api/copilot), AICopilot.tsx UI; sidebar entry 'AI Copilot' at view 'ai_copilot'.

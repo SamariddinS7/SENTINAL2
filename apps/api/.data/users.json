@@ -8,6 +8,15 @@
       "department": "General",
       "role": "OPERATOR",
       "createdAt": "2026-07-19T05:45:45.065Z"
+    },
+    {
+      "id": "c197b3a4-f762-4f49-a148-ea0aee266a84",
+      "fullName": "sam",
+      "email": "sam@gmail.com",
+      "passwordHash": "$2b$12$gq/dNq9ueHcNqNyAhwQAUeG3n1Xc3RB7KjO1930Bn5xaXxCOI.hAO",
+      "department": "it",
+      "role": "OPERATOR",
+      "createdAt": "2026-07-21T14:52:01.369Z"
     }
   ]
 }

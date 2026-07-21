@@ -1,0 +1,583 @@
+Ajoyib. Endi MASTER PROMPT ning keyingi qismini yozamiz.
+
+Bu qism AI Copilot'ning Agent Architecture ni belgilaydi. Bu arxitektura OpenAI Operator, Microsoft Security Copilot va zamonaviy multi-agent tizimlaridan ilhomlangan, lekin AI VMS uchun moslashtirilgan.
+
+MASTER PROMPT — VOLUME 1
+SECTION 2 — MULTI-AGENT ARCHITECTURE
+====================================================
+AI AGENT FRAMEWORK
+====================================================
+
+The Enterprise AI Copilot must be implemented as a Multi-Agent System.
+
+The Copilot itself must never perform every task directly.
+
+Instead, it acts as an Orchestrator.
+
+Every specialized capability belongs to an independent AI Agent.
+
+Agents communicate through the internal orchestration layer.
+
+Agents exchange structured tasks.
+
+Agents never access private data outside their permissions.
+
+====================================================
+ORCHESTRATOR
+====================================================
+
+The Orchestrator is responsible for:
+
+Understanding user intent
+
+Planning execution
+
+Selecting agents
+
+Scheduling tasks
+
+Managing context
+
+Managing memory
+
+Combining results
+
+Resolving conflicts
+
+Returning final responses
+
+====================================================
+AGENT EXECUTION PIPELINE
+====================================================
+
+User Request
+
+↓
+
+Intent Detection
+
+↓
+
+Permission Verification
+
+↓
+
+Planning
+
+↓
+
+Task Decomposition
+
+↓
+
+Agent Selection
+
+↓
+
+Parallel Execution
+
+↓
+
+Evidence Collection
+
+↓
+
+Reasoning
+
+↓
+
+Validation
+
+↓
+
+Response Generation
+
+====================================================
+AGENT COMMUNICATION
+====================================================
+
+Agents communicate only through structured messages.
+
+Every message contains:
+
+Task ID
+
+Request ID
+
+Timestamp
+
+Agent Name
+
+Priority
+
+Input
+
+Output
+
+Confidence
+
+Evidence References
+
+Execution Status
+
+====================================================
+AGENT RESPONSIBILITIES
+====================================================
+
+Each agent owns exactly one responsibility.
+
+Agents never duplicate functionality.
+
+Agents must remain independent.
+
+Every agent must expose a documented interface.
+
+====================================================
+SECTION 3 — CORE AGENTS
+====================================================
+CORE AGENTS
+====================================================
+
+The platform must implement the following enterprise agents.
+
+1.
+
+Vision Agent
+
+Responsible for:
+
+Image Understanding
+
+Video Understanding
+
+Live Camera Analysis
+
+Snapshot Analysis
+
+Object Detection
+
+Scene Description
+
+OCR
+
+Vehicle Analysis
+
+Fire Detection
+
+Smoke Detection
+
+2.
+
+Tracking Agent
+
+Responsible for:
+
+Person Tracking
+
+Vehicle Tracking
+
+Cross-Camera Tracking
+
+Track Recovery
+
+Track History
+
+3.
+
+Identity Agent
+
+Responsible for:
+
+Face Recognition
+
+ReID
+
+Identity Fusion
+
+Person Matching
+
+Embedding Search
+
+Unknown Person Detection
+
+4.
+
+Investigation Agent
+
+Responsible for:
+
+Timeline Analysis
+
+Evidence Collection
+
+Movement Reconstruction
+
+Incident Investigation
+
+Cross-Camera Search
+
+Relationship Analysis
+
+5.
+
+Search Agent
+
+Responsible for:
+
+Database Search
+
+Vector Search
+
+Person Search
+
+Vehicle Search
+
+Evidence Search
+
+Timeline Search
+
+OCR Search
+
+Camera Search
+
+6.
+
+Reasoning Agent
+
+Responsible for:
+
+Evidence Correlation
+
+Conflict Resolution
+
+Explanation
+
+Hypothesis Ranking
+
+Confidence Estimation
+
+Recommendation Generation
+
+7.
+
+Planning Agent
+
+Responsible for:
+
+Task Planning
+
+Execution Planning
+
+Retry Planning
+
+Parallel Scheduling
+
+Workflow Generation
+
+8.
+
+Control Agent
+
+Responsible for:
+
+Executing Commands
+
+Camera Control
+
+Playback Control
+
+Alarm Actions
+
+Report Actions
+
+SOC Actions
+
+9.
+
+Monitoring Agent
+
+Responsible for:
+
+Health Monitoring
+
+Performance Monitoring
+
+Storage Monitoring
+
+GPU Monitoring
+
+Camera Monitoring
+
+Worker Monitoring
+
+10.
+
+Reporting Agent
+
+Responsible for:
+
+Incident Reports
+
+Evidence Reports
+
+Executive Reports
+
+Analytics Reports
+
+Attendance Reports
+
+Investigation Reports
+
+====================================================
+SECTION 4 — TOOL EXECUTION ENGINE
+====================================================
+TOOL EXECUTION ENGINE
+====================================================
+
+The AI Copilot must never execute commands directly.
+
+Every action must be executed through registered Tools.
+
+Each Tool exposes:
+
+Name
+
+Description
+
+Input Schema
+
+Output Schema
+
+Permissions
+
+Safety Policy
+
+Execution Timeout
+
+Retry Policy
+
+====================================================
+AVAILABLE TOOL CATEGORIES
+====================================================
+
+Camera Tools
+
+Playback Tools
+
+Evidence Tools
+
+Report Tools
+
+Database Tools
+
+Search Tools
+
+Analytics Tools
+
+Identity Tools
+
+Notification Tools
+
+Digital Twin Tools
+
+System Administration Tools
+
+Plugin Tools
+
+====================================================
+TOOL EXECUTION
+====================================================
+
+Every Tool execution follows:
+
+Validate Permissions
+
+↓
+
+Validate Parameters
+
+↓
+
+Execute
+
+↓
+
+Verify Success
+
+↓
+
+Audit
+
+↓
+
+Return Result
+
+====================================================
+SECTION 5 — ENTERPRISE MEMORY SYSTEM
+====================================================
+MEMORY ARCHITECTURE
+====================================================
+
+The AI Copilot maintains multiple memory layers.
+
+====================================================
+
+Conversation Memory
+
+Stores:
+
+Current conversation
+
+Operator intent
+
+Current investigation
+
+Open questions
+
+====================================================
+
+Working Memory
+
+Stores:
+
+Current task
+
+Agent outputs
+
+Intermediate reasoning
+
+Temporary results
+
+====================================================
+
+Operational Memory
+
+Stores:
+
+Current incidents
+
+Current alarms
+
+Current investigations
+
+Current reports
+
+====================================================
+
+Knowledge Memory
+
+Stores:
+
+System Documentation
+
+Camera Topology
+
+Building Layout
+
+Configuration
+
+Operational Procedures
+
+====================================================
+
+Long-Term Memory
+
+Stores:
+
+Frequently used investigations
+
+Operator preferences
+
+Saved workflows
+
+Approved procedures
+
+====================================================
+
+Every memory entry contains:
+
+Creation Time
+
+Expiration Policy
+
+Source
+
+Confidence
+
+Access Level
+
+Owner
+
+====================================================
+SECTION 6 — PERMISSION MODEL
+====================================================
+PERMISSION MODEL
+====================================================
+
+Every request must pass authorization.
+
+Permissions are evaluated before:
+
+Viewing Cameras
+
+Opening Recordings
+
+Viewing Evidence
+
+Viewing Person Profiles
+
+Generating Reports
+
+Executing Actions
+
+Restarting Services
+
+Exporting Data
+
+Deleting Records
+
+====================================================
+
+Permission Model
+
+Organization
+
+↓
+
+Site
+
+↓
+
+Building
+
+↓
+
+Floor
+
+↓
+
+Zone
+
+↓
+
+Camera
+
+↓
+
+Feature
+
+↓
+
+Action
+
+====================================================
+
+The AI Copilot must never bypass RBAC.
+
+If access is denied:
+
+Explain why.
+
+Never expose hidden information.
+
+Never leak metadata.

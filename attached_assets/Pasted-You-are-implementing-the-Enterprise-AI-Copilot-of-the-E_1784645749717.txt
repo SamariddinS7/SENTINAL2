@@ -1,0 +1,245 @@
+You are implementing the Enterprise AI Copilot of the Enterprise AI Video Management System (AI VMS).
+
+This AI Copilot becomes the primary operational intelligence of the platform.
+
+The AI Copilot is not a chatbot.
+
+The AI Copilot is not an LLM wrapper.
+
+The AI Copilot is an enterprise operational intelligence platform capable of perception, reasoning, planning and executing authorized actions.
+
+It must integrate with every subsystem.
+
+================================================
+
+MISSION
+
+================================================
+
+The AI Copilot must be capable of:
+
+Understanding natural language
+
+Understanding surveillance video
+
+Understanding uploaded images
+
+Understanding recorded video
+
+Understanding camera topology
+
+Understanding Digital Twin
+
+Understanding system architecture
+
+Understanding alarms
+
+Understanding evidence
+
+Understanding investigations
+
+Understanding operators
+
+Understanding permissions
+
+Understanding reports
+
+Understanding analytics
+
+Understanding infrastructure
+
+Understanding system health
+
+Executing authorized actions
+
+Explaining every decision
+
+Learning operational context
+
+Helping operators perform investigations
+
+================================================
+
+CORE PRINCIPLES
+
+================================================
+
+Observe
+
+↓
+
+Understand
+
+↓
+
+Reason
+
+↓
+
+Plan
+
+↓
+
+Verify
+
+↓
+
+Execute
+
+↓
+
+Explain
+
+↓
+
+Learn
+
+================================================
+
+ABSOLUTE RULES
+
+================================================
+
+Never fabricate observations.
+
+Never invent AI detections.
+
+Never create fake evidence.
+
+Never hallucinate identities.
+
+Never claim certainty without evidence.
+
+Never execute actions outside user permissions.
+
+Always explain uncertainty.
+
+Always reference supporting evidence.
+
+================================================
+
+AI COPILOT CAPABILITIES
+
+================================================
+
+The Copilot must:
+
+See
+
+Hear (future voice input)
+
+Read
+
+Analyze
+
+Reason
+
+Search
+
+Plan
+
+Execute
+
+Explain
+
+Monitor
+
+Learn
+
+Assist
+
+================================================
+
+KNOWLEDGE SOURCES
+
+================================================
+
+The Copilot may reason using:
+
+Live Cameras
+
+Recorded Video
+
+Snapshots
+
+Uploaded Images
+
+AI Detections
+
+Tracking
+
+Identity Intelligence
+
+OCR
+
+Vehicle Recognition
+
+Analytics
+
+Digital Twin
+
+Area Maps
+
+Reports
+
+Events
+
+Evidence
+
+Alarm History
+
+Operator Actions
+
+System Logs
+
+Configuration
+
+Health Metrics
+
+Documentation
+
+API Responses
+
+================================================
+
+SOURCE OF TRUTH
+
+================================================
+
+The Copilot never invents information.
+
+Every answer must originate from:
+
+Camera
+
+Video
+
+Image
+
+Database
+
+AI Model
+
+System API
+
+Evidence
+
+Operator Input
+
+System Configuration
+
+================================================
+
+ARCHITECTURE
+
+================================================
+
+The Copilot consists of independent agents.
+
+Every agent has one responsibility.
+
+Agents collaborate through the internal orchestration layer.
+
+The architecture must remain modular.
+
+Every capability must be replaceable without redesigning the platform.
