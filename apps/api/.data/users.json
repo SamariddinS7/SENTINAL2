@@ -17,6 +17,15 @@
       "department": "it",
       "role": "OPERATOR",
       "createdAt": "2026-07-21T14:52:01.369Z"
+    },
+    {
+      "id": "a7c170e5-db25-4e2c-ba59-9499d446deb7",
+      "fullName": "wer",
+      "email": "sam@gamil",
+      "passwordHash": "$2b$12$yxCJ/z4fK5D/AKSJEtgzouSFhSRYDpZg1dlRwzd7YMeodafOvAlRW",
+      "department": "General",
+      "role": "OPERATOR",
+      "createdAt": "2026-07-21T17:31:13.306Z"
     }
   ]
 }

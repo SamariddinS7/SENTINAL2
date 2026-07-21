@@ -6,8 +6,7 @@ import { FaceDetectorView } from './components/FaceDetectorView';
 import { SettingsView } from './components/SettingsView';
 import { AttendanceLogViewer } from './components/AttendanceLogViewer';
 import { CamerasView } from './components/CamerasView';
-import { AIChatView } from './components/AIChatView';
-import { AICopilot } from './components/AICopilot';
+import { AIPanel } from './components/AIPanel';
 import { AreaMapView } from './components/AreaMapView';
 import { DigitalTwinBuilder } from './components/DigitalTwinBuilder';
 import { ProfileModal } from './components/ProfileModal';
@@ -28,7 +27,7 @@ import { User } from '@sentinel/shared-types';
 import { 
   LayoutDashboard, Users, FileText, Settings, Search, Bell, Menu, X, Shield, 
   ChevronDown, Camera, Video, LogOut, User as UserIcon, Lock, HelpCircle, 
-  KeyRound, Mail, ArrowRight, Bot, Map as MapIcon, Moon, Sun,
+  KeyRound, Mail, ArrowRight, Map as MapIcon, Moon, Sun,
   Activity, Terminal, ShieldAlert, Layers, Eye, Network, Fingerprint, TrendingUp,
   Monitor, Cpu, Zap, AlertTriangle, Archive, BarChart2, UserCheck, Globe,
   HeartPulse, LayoutGrid, FolderSearch, Sparkles
@@ -177,11 +176,13 @@ const AppContent: React.FC = () => {
   
   const [currentView, setCurrentView] = useState<
     'dashboard' | 'users' | 'logs' | 'live_feed' | 'settings' | 'cameras' |
-    'ai_chat' | 'ai_copilot' | 'map' | 'builder' |
+    'map' | 'builder' |
     'identity_fusion' | 'appearance_intel' | 'multi_modal_intel' |
     'event_timeline' | 'investigation' | 'resources' |
     'multi_site' | 'reports'
   >('dashboard');
+
+  const [isAIPanelOpen, setIsAIPanelOpen] = useState(false);
   
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [globalSearchTerm, setGlobalSearchTerm] = useState('');
@@ -259,7 +260,6 @@ const AppContent: React.FC = () => {
           case 'logs':              return t('nav.records');
           case 'settings':          return t('nav.settings');
           case 'cameras':           return t('cameras.title');
-          case 'ai_chat':           return t('nav.aiChat');
           case 'map':               return t('nav.areaMap');
           case 'builder':           return 'Raqamli Egizak Arxitektori';
           case 'event_timeline':    return 'AI Hodisalar Vaqt Chizig\'i';
@@ -352,8 +352,6 @@ const AppContent: React.FC = () => {
           <div>
             <p className="px-4 text-[10px] font-bold text-text-secondary uppercase tracking-widest mb-3">Intellekt</p>
             <SidebarItem icon={FolderSearch} label="Tekshiruv Markazi"      active={currentView === 'investigation'}     onClick={() => { setCurrentView('investigation');     setIsSidebarOpen(false); }} />
-            <SidebarItem icon={Sparkles}     label="AI Copilot"              active={currentView === 'ai_copilot'}        onClick={() => { setCurrentView('ai_copilot');        setIsSidebarOpen(false); }} />
-            <SidebarItem icon={Bot}          label={t('nav.aiChat')}         active={currentView === 'ai_chat'}           onClick={() => { setCurrentView('ai_chat');           setIsSidebarOpen(false); }} />
             <SidebarItem icon={Layers}       label="Identity Fusion"         active={currentView === 'identity_fusion'}   onClick={() => { setCurrentView('identity_fusion');   setIsSidebarOpen(false); }} />
             <SidebarItem icon={Eye}          label="Appearance Intelligence" active={currentView === 'appearance_intel'}  onClick={() => { setCurrentView('appearance_intel');  setIsSidebarOpen(false); }} />
             <SidebarItem icon={Network}      label="Multi-Modal Engine"      active={currentView === 'multi_modal_intel'} onClick={() => { setCurrentView('multi_modal_intel'); setIsSidebarOpen(false); }} />
@@ -433,6 +431,22 @@ const AppContent: React.FC = () => {
 
             <div className="flex items-center gap-1 sm:gap-2">
               <ThemeToggle />
+
+              {/* AI Panel toggle */}
+              <button
+                onClick={() => setIsAIPanelOpen(v => !v)}
+                className={`p-2 rounded-full transition-colors relative ${
+                  isAIPanelOpen
+                    ? 'text-cyan-400 bg-cyan-500/15 hover:bg-cyan-500/25'
+                    : 'text-text-secondary hover:text-text-primary hover:bg-app-surface'
+                }`}
+                title="AI Copilot & Chat"
+              >
+                <Sparkles className="w-5 h-5" />
+                {isAIPanelOpen && (
+                  <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-cyan-400 rounded-full border border-app-panel" />
+                )}
+              </button>
 
               <div className="relative">
                   <button 
@@ -523,8 +537,6 @@ const AppContent: React.FC = () => {
                       {currentView === 'map'               && <AreaMapView />}
                       {currentView === 'builder'           && <DigitalTwinBuilder />}
                       {currentView === 'settings'          && <SettingsView />}
-                      {currentView === 'ai_copilot'        && <AICopilot currentView={currentView} onNavigate={(v) => setCurrentView(v as any)} />}
-                      {currentView === 'ai_chat'           && <AIChatView />}
                       {currentView === 'identity_fusion'   && <IdentityFusionConsole />}
                       {currentView === 'appearance_intel'  && <AppearanceIntelligenceConsole />}
                       {currentView === 'multi_modal_intel' && <MultiModalIdentityConsole />}
@@ -538,13 +550,21 @@ const AppContent: React.FC = () => {
             </div>
         </main>
 
+        {/* AI Panel — right-side drawer, available on all pages */}
+        <AIPanel
+          isOpen={isAIPanelOpen}
+          onClose={() => setIsAIPanelOpen(false)}
+          currentView={currentView}
+          onNavigate={(v) => setCurrentView(v as any)}
+        />
+
         {/* Mobile Bottom Navigation - Visible only on small screens */}
         <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-app-panel/90 backdrop-blur-xl border-t border-border flex justify-around items-center h-16 px-1 z-50 shadow-[0_-8px_30px_rgba(0,0,0,0.3)] transition-colors duration-300">
           {[
             { id: 'dashboard', label: t('nav.dashboard'), icon: LayoutDashboard },
             { id: 'cameras', label: t('nav.cameras'), icon: Video },
             { id: 'map', label: t('nav.areaMap'), icon: MapIcon },
-            { id: 'ai_chat', label: t('nav.aiChat'), icon: Bot },
+            { id: '__ai__', label: 'AI', icon: Sparkles },
             { id: 'settings', label: t('nav.settings'), icon: Settings },
           ].map((item) => {
             const Icon = item.icon;
@@ -552,16 +572,27 @@ const AppContent: React.FC = () => {
             return (
               <button
                 key={item.id}
-                onClick={() => { setCurrentView(item.id as any); setIsSidebarOpen(false); }}
+                onClick={() => {
+                  if (item.id === '__ai__') {
+                    setIsAIPanelOpen(v => !v);
+                  } else {
+                    setCurrentView(item.id as any);
+                    setIsSidebarOpen(false);
+                  }
+                }}
                 className={`flex flex-col items-center justify-center flex-1 h-full relative group transition-all duration-300 ${
-                  isActive ? 'text-brand-primary' : 'text-text-secondary hover:text-text-primary'
+                  item.id === '__ai__'
+                    ? isAIPanelOpen ? 'text-cyan-400' : 'text-text-secondary hover:text-text-primary'
+                    : isActive ? 'text-brand-primary' : 'text-text-secondary hover:text-text-primary'
                 }`}
               >
-                <div className={`p-1 rounded-lg transition-all duration-300 ${isActive ? 'bg-brand-primary/10' : ''}`}>
-                  <Icon size={20} className={isActive ? 'scale-110' : 'group-hover:scale-105'} />
+                <div className={`p-1 rounded-lg transition-all duration-300 ${
+                  item.id === '__ai__' ? (isAIPanelOpen ? 'bg-cyan-500/15' : '') : (isActive ? 'bg-brand-primary/10' : '')
+                }`}>
+                  <Icon size={20} className={isActive || (item.id === '__ai__' && isAIPanelOpen) ? 'scale-110' : 'group-hover:scale-105'} />
                 </div>
                 <span className="text-[10px] mt-1 font-bold tracking-tight truncate max-w-[64px] transition-all">{item.label}</span>
-                {isActive && (
+                {isActive && item.id !== '__ai__' && (
                   <motion.div layoutId="mobile-nav-pill" className="absolute -top-px left-1/4 right-1/4 h-1 bg-brand-primary rounded-b-full shadow-[0_0_12px_rgba(6,182,212,0.6)]" />
                 )}
               </button>
