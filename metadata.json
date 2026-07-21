@@ -1,0 +1,10 @@
+{
+  "name": "Copy of Sentinal",
+  "description": "A real-time application monitoring and security tool designed to ensure system reliability and peak performance.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

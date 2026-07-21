@@ -1,0 +1,159 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile and enrollment data",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "fullName": { "type": "string" },
+        "role": { "type": "string" },
+        "department": { "type": "string" },
+        "enrolledDate": { "type": "string" },
+        "hasEmbedding": { "type": "boolean" },
+        "lastActive": { "type": "string" },
+        "avatarUrl": { "type": "string" }
+      },
+      "required": ["id", "fullName", "role"]
+    },
+    "Camera": {
+      "title": "Camera",
+      "description": "Camera configuration and status",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "location": { "type": "string" },
+        "type": { "type": "string" },
+        "streamUrl": { "type": "string" },
+        "status": { "type": "string" },
+        "fps": { "type": "number" },
+        "resolution": { "type": "string" },
+        "lastActive": { "type": "string" },
+        "focalLength": { "type": "number" },
+        "sensorWidth": { "type": "number" },
+        "sensorHeight": { "type": "number" }
+      },
+      "required": ["id", "name", "type"]
+    },
+    "AttendanceLog": {
+      "title": "AttendanceLog",
+      "description": "Attendance record for a user",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "userAvatar": { "type": "string" },
+        "department": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "checkIn": { "type": "string" },
+        "checkOut": { "type": "string" },
+        "status": { "type": "string" },
+        "confidenceScore": { "type": "number" },
+        "livenessVerified": { "type": "boolean" },
+        "nodeId": { "type": "string" }
+      },
+      "required": ["id", "userId", "userName", "status"]
+    },
+    "SecurityAlert": {
+      "title": "SecurityAlert",
+      "description": "Security anomaly alert",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "severity": { "type": "string" },
+        "message": { "type": "string" },
+        "timestamp": { "type": "number" },
+        "entityId": { "type": "string" },
+        "zoneId": { "type": "string" },
+        "type": { "type": "string" }
+      },
+      "required": ["id", "severity", "message", "timestamp", "entityId"]
+    },
+    "FusedIdentity": {
+      "title": "FusedIdentity",
+      "description": "Enterprise fused persistent identity record",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "status": { "type": "string" },
+        "label": { "type": "string" },
+        "userId": { "type": "string" },
+        "role": { "type": "string" },
+        "confidence": { "type": "number" },
+        "firstSeen": { "type": "string" },
+        "lastSeen": { "type": "string" },
+        "lastCameraId": { "type": "string" },
+        "upperClothingColor": { "type": "string" },
+        "lowerClothingColor": { "type": "string" },
+        "clothingType": { "type": "string" },
+        "shoes": { "type": "string" },
+        "backpack": { "type": "boolean" },
+        "helmet": { "type": "boolean" },
+        "vest": { "type": "boolean" },
+        "bodySize": { "type": "string" },
+        "bodyShape": { "type": "string" }
+      },
+      "required": ["id", "status", "label"]
+    },
+    "MultiModalIdentity": {
+      "title": "MultiModalIdentity",
+      "description": "Enterprise Multi-Modal Global Identity Profile",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "status": { "type": "string" },
+        "label": { "type": "string" },
+        "userId": { "type": "string" },
+        "role": { "type": "string" },
+        "firstSeen": { "type": "string" },
+        "lastSeen": { "type": "string" },
+        "lastCameraId": { "type": "string" }
+      },
+      "required": ["id", "status", "label"]
+    },
+    "AppearanceProfile": {
+      "title": "AppearanceProfile",
+      "description": "Person Appearance Attribute Profile",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "lastUpdated": { "type": "string" },
+        "upperClothingColor": { "type": "string" },
+        "lowerClothingColor": { "type": "string" }
+      },
+      "required": ["id", "lastUpdated"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profiles"
+    },
+    "/cameras/{cameraId}": {
+      "schema": "Camera",
+      "description": "Camera devices"
+    },
+    "/attendanceLogs/{logId}": {
+      "schema": "AttendanceLog",
+      "description": "Attendance logs"
+    },
+    "/securityAlerts/{alertId}": {
+      "schema": "SecurityAlert",
+      "description": "Security anomaly alerts"
+    },
+    "/fusedIdentities/{identityId}": {
+      "schema": "FusedIdentity",
+      "description": "Enterprise persistent fused identities"
+    },
+    "/multiModalIdentities/{identityId}": {
+      "schema": "MultiModalIdentity",
+      "description": "Multi-Modal Global Identities"
+    },
+    "/appearanceProfiles/{profileId}": {
+      "schema": "AppearanceProfile",
+      "description": "Appearance profiles extracted by modality"
+    }
+  }
+}

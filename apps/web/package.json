@@ -1,0 +1,15 @@
+{
+  "name": "@sentinel/web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "setup": "mkdir -p src && ln -sf ../../api/src/services src/services && ln -sf ../../api/src/lib src/lib",
+    "dev": "npm run setup && vite",
+    "build": "npm run setup && vite build",
+    "lint": "npm run setup && tsc --noEmit"
+  },
+  "dependencies": {
+    "@sentinel/shared-types": "*"
+  }
+}
