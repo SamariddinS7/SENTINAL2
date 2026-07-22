@@ -1,0 +1,599 @@
+====================================================
+VISION INTELLIGENCE PLATFORM
+====================================================
+
+The Vision Intelligence Platform provides the perception capabilities of the Enterprise AI Copilot.
+
+It transforms raw visual data into structured observations that can be used by the Reasoning Engine.
+
+The platform must support real-time and offline analysis.
+
+====================================================
+SUPPORTED VISUAL SOURCES
+====================================================
+
+Live RTSP Streams
+
+Recorded Video
+
+Snapshots
+
+Uploaded Images
+
+Evidence Images
+
+Evidence Videos
+
+Video Wall Frames
+
+Digital Twin Views
+
+Screen Captures (authorized)
+
+Thermal Cameras (future)
+
+Drone Cameras (future)
+
+Body Cameras (future)
+
+====================================================
+VISUAL UNDERSTANDING
+====================================================
+
+The Vision Platform must identify and describe:
+
+Objects
+
+Persons
+
+Vehicles
+
+Animals
+
+Buildings
+
+Rooms
+
+Doors
+
+Windows
+
+Roads
+
+Parking Spaces
+
+Machines
+
+Safety Equipment
+
+Text
+
+Signs
+
+Smoke
+
+Fire
+
+Lighting Conditions
+
+Weather Conditions (outdoor)
+
+====================================================
+OUTPUT
+====================================================
+
+Every visual observation must produce:
+
+Observation ID
+
+Timestamp
+
+Camera ID
+
+Frame ID
+
+Object List
+
+Scene Description
+
+Confidence
+
+Evidence Reference
+
+Model Version
+SECTION 8 — LIVE VIDEO UNDERSTANDING
+====================================================
+LIVE VIDEO UNDERSTANDING
+====================================================
+
+The assistant must continuously understand live video.
+
+Capabilities:
+
+Describe the current scene.
+
+Summarize ongoing activity.
+
+Detect unusual events.
+
+Identify changes.
+
+Track moving objects.
+
+Recognize recurring patterns.
+
+Estimate crowd density.
+
+Estimate occupancy.
+
+Generate live summaries.
+
+====================================================
+EXAMPLES
+====================================================
+
+Operator:
+
+"What is happening in Warehouse A?"
+
+Assistant:
+
+Analyze live stream
+
+↓
+
+Identify persons
+
+↓
+
+Identify vehicles
+
+↓
+
+Identify ongoing work
+
+↓
+
+Identify hazards
+
+↓
+
+Generate summary
+
+↓
+
+Return supporting evidence
+SECTION 9 — VIDEO INVESTIGATION ENGINE
+====================================================
+VIDEO INVESTIGATION
+====================================================
+
+The assistant must answer investigation queries using recorded video.
+
+Examples:
+
+What happened here?
+
+Who entered?
+
+Who exited?
+
+How many people?
+
+Who stayed the longest?
+
+Who entered together?
+
+Who returned later?
+
+Find the person carrying a backpack.
+
+Find everyone wearing yellow.
+
+Find forklifts.
+
+Find delivery trucks.
+
+Find abandoned objects.
+
+Find smoke.
+
+Find fire.
+
+Find suspicious movement.
+
+====================================================
+TIMELINE RECONSTRUCTION
+====================================================
+
+Automatically reconstruct events.
+
+Support:
+
+Chronological Timeline
+
+Movement Timeline
+
+Cross-Camera Timeline
+
+Evidence Timeline
+
+Incident Timeline
+SECTION 10 — IMAGE UNDERSTANDING
+====================================================
+IMAGE UNDERSTANDING
+====================================================
+
+Analyze uploaded images.
+
+Capabilities:
+
+Scene Description
+
+Object Detection
+
+Face Detection
+
+Vehicle Detection
+
+OCR
+
+License Plate Recognition
+
+PPE Detection
+
+Damage Detection
+
+Hazard Detection
+
+Image Quality Analysis
+
+Lighting Analysis
+
+====================================================
+VISUAL QUESTION ANSWERING
+====================================================
+
+Examples:
+
+What is shown in this image?
+
+How many people?
+
+Are helmets present?
+
+Read the text.
+
+Read the license plate.
+
+Describe the scene.
+
+Identify safety violations.
+
+Detect fire.
+
+Detect smoke.
+SECTION 11 — MULTI-CAMERA REASONING
+====================================================
+MULTI-CAMERA REASONING
+====================================================
+
+The assistant must reason across multiple cameras.
+
+Support:
+
+Cross-Camera Tracking
+
+Movement Reconstruction
+
+Entry Detection
+
+Exit Detection
+
+Route Estimation
+
+Building Traversal
+
+Cross-Floor Movement
+
+Cross-Site Investigation
+
+====================================================
+EXAMPLE
+====================================================
+
+Operator:
+
+"Where did this person go after leaving Camera 12?"
+
+Assistant:
+
+Search Tracking
+
+↓
+
+Search ReID
+
+↓
+
+Search Camera Graph
+
+↓
+
+Reconstruct Route
+
+↓
+
+Display Timeline
+
+↓
+
+Highlight Cameras
+SECTION 12 — PERSON ATTRIBUTE ANALYSIS
+====================================================
+PERSON ATTRIBUTE ANALYSIS
+====================================================
+
+Extract attributes without inferring sensitive personal characteristics.
+
+Supported attributes:
+
+Upper Clothing Color
+
+Lower Clothing Color
+
+Shoes
+
+Helmet
+
+Safety Vest
+
+Mask
+
+Backpack
+
+Handbag
+
+Umbrella
+
+Reflective Clothing
+
+Estimated Height Range
+
+Body Build (coarse)
+
+Movement Direction
+
+Walking / Running
+
+Carrying Object
+
+Bicycle
+
+Wheelchair
+
+====================================================
+OUTPUT
+====================================================
+
+Every attribute includes:
+
+Confidence
+
+Observation Time
+
+Camera
+
+Evidence Reference
+SECTION 13 — VEHICLE INTELLIGENCE
+====================================================
+VEHICLE INTELLIGENCE
+====================================================
+
+Detect and classify vehicles.
+
+Support:
+
+Passenger Car
+
+SUV
+
+Pickup
+
+Truck
+
+Bus
+
+Motorcycle
+
+Bicycle
+
+Forklift
+
+Emergency Vehicle
+
+Construction Equipment
+
+====================================================
+VEHICLE ATTRIBUTES
+====================================================
+
+Color
+
+Type
+
+Approximate Size
+
+License Plate (when visible)
+
+Movement Direction
+
+Entry Time
+
+Exit Time
+
+Parking Duration
+
+Route
+
+Associated Evidence
+SECTION 14 — OCR & DOCUMENT INTELLIGENCE
+====================================================
+OCR INTELLIGENCE
+====================================================
+
+Extract text from:
+
+Signs
+
+Labels
+
+Shipping Boxes
+
+Packages
+
+Documents
+
+Screens
+
+Badges
+
+Vehicle Plates
+
+Safety Signs
+
+====================================================
+OCR OUTPUT
+====================================================
+
+Detected Text
+
+Confidence
+
+Language
+
+Bounding Boxes
+
+Timestamp
+
+Evidence Reference
+
+====================================================
+SEARCH
+====================================================
+
+Search by:
+
+Text
+
+Partial Text
+
+Regular Expressions
+
+Time
+
+Camera
+
+Building
+SECTION 15 — SCENE & BEHAVIOR UNDERSTANDING
+====================================================
+SCENE UNDERSTANDING
+====================================================
+
+The assistant must describe the environment.
+
+Examples:
+
+Loading activity
+
+Waiting line
+
+Crowded entrance
+
+Vehicle congestion
+
+Empty hallway
+
+Maintenance work
+
+Restricted area occupancy
+
+====================================================
+BEHAVIOR ANALYSIS
+====================================================
+
+Recognize observable behaviors such as:
+
+Running
+
+Loitering
+
+Queue Formation
+
+Object Left Behind
+
+Object Removed
+
+Restricted Area Entry
+
+Wrong Direction
+
+Unsafe Movement
+
+Crowd Formation
+
+====================================================
+IMPORTANT
+====================================================
+
+The assistant must describe only behaviors directly observable in the video.
+
+It must not infer emotions, intentions, criminality, or other unobservable mental states.
+
+If multiple explanations are possible, present them as possibilities rather than facts.
+SECTION 16 — VISUAL EVIDENCE ENGINE
+====================================================
+VISUAL EVIDENCE ENGINE
+====================================================
+
+Every conclusion must reference evidence.
+
+Attach:
+
+Snapshots
+
+Video Clips
+
+Bounding Boxes
+
+Track IDs
+
+Recognition Results
+
+Timeline Entries
+
+Camera IDs
+
+Timestamps
+
+AI Model Versions
+
+====================================================
+EXPLAINABILITY
+====================================================
+
+Every answer must include:
+
+Evidence Used
+
+Confidence
+
+Alternative Interpretations (if applicable)
+
+Missing Information
+
+Relevant Cameras
+
+Related Events
+
+No conclusion may be presented without supporting evidence.
